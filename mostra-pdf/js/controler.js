@@ -1,4 +1,4 @@
-var urlPadrao = '10.100.5.22:8080/rest-multas/rest';
+var urlPadrao = 'localhost:8080/rest-multas/rest';
 var gif = document.getElementById("gif");
 gif.style.display = 'none';
 
@@ -8,7 +8,7 @@ function visualizar(){
     var id = $('#id-arquivo').val();
     var pdfviewer = document.getElementById("pdfviewer");
     console.log(id);
-    pdfviewer.src = 'http://10.100.5.22:8080/rest-multas/rest/multas/get-arquivo/'+id;
+    pdfviewer.src = 'http://10.100.5.22:8080/'+id;
     gif.style.display = 'none';
 }
 
@@ -16,7 +16,7 @@ var download = function(){
     var id = $('#id-arquivo').val();
     $.ajax({
         type: 'POST',
-        url: 'http://10.100.5.22:8080/rest-multas/rest/multas/get-arquivo',
+        url: 'http://10.100.5.22:8080/',
         data: JSON.stringify({id:id}),
         dataType: 'json',
         contentType: 'application/json',
@@ -37,22 +37,22 @@ var download2 = function(){
     var id = $('#id-arquivo').val();
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:8080/gerar-pdf-portaria/rest/gerar-pdf/get-byte',
+        url: 'http://localhost:8080/',
         data: JSON.stringify(
             {
             "ARTIGO_INCISO_WORK":id,
-            "NOME_WORK":"ANDRE AURELIO CUNHA                     ",
-            "CPF_WORK":"38624743133",
-            "DATA_CADASTRO_WORK":"12/06/2017",
-            "NUM_PORTARIA":"002019",
-            "ANO_PORTARIA":"2017",
-            "NUMERO_CNH_WORK":"1000000019",
-            "NUMERO_REGISTRO_WORK":"00002819742",
-            "TIPO_PROC_WORK":"cassacao",
+            "NOME_WORK":"                     ",
+            "CPF_WORK":"",
+            "DATA_CADASTRO_WORK":"1",
+            "NUM_PORTARIA":"",
+            "ANO_PORTARIA":"",
+            "NUMERO_CNH_WORK":"",
+            "NUMERO_REGISTRO_WORK":"",
+            "TIPO_PROC_WORK":"",
             "AUTO":[
-            "MSMS012455",
-            "MSMS012455",
-            "MSMS012455"
+            "",
+            "",
+            ""
             ]
 
         }
